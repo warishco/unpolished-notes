@@ -1,6 +1,6 @@
 export const SITE = {
   title: {
-    en: "BlockLune's Blog",
+    en: "Unpolished Notes",
     zh: "BlockLune's Blog",
   },
   description: {
