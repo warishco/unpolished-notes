@@ -10,8 +10,8 @@ import rss from "@astrojs/rss";
 export async function GET(context: any) {
   const posts = await getCollection("posts");
   return rss({
-    title: SITE.title[defaultLang],
-    description: SITE.description[defaultLang],
+    title: SITE.title,
+    description: SITE.description,
     site: context.site,
     items: posts.map((post: Post) => {
       const lang = getLangFromSlug(post.slug);

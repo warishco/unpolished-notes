@@ -1,12 +1,6 @@
 export const SITE = {
-  title: {
-    en: "Unpolished Notes",
-    zh: "BlockLune's Blog",
-  },
-  description: {
-    en: "A blog about development and life, powered by Astro.",
-    zh: "一个关于开发和生活的博客，由 Astro 驱动。",
-  },
+  title: "Unpolished Notes",
+  description: "A blog about development and life, powered by Astro.",
   url: "https://blocklune.cc",
   og: {
     imageUrl: "/ogimage.jpg"
@@ -25,19 +19,16 @@ export const SITE = {
 };
 
 export const AUTHOR = {
-  name: "BlockLune",
-  link: "https://github.com/BlockLune",
-  email: "i@blocklune.cc",
-  bio: {
-    en: "A student majoring in computer science and technology.",
-    zh: "一名计算机科学与技术专业的学生。",
-  }
+  name: "Warish",
+  link: "https://warish.co",
+  email: "waricha@warish.co",
+  bio: "A student majoring in computer science and technology.",
 };
 
 export const SOCIALS = [
   {
     name: "Github",
-    href: "https://github.com/BlockLune",
+    href: "https://github.com/warishco",
     linkTitle: `${AUTHOR.name} on Github`,
   },
   {
