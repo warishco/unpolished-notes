@@ -20,23 +20,23 @@ import slugify from "slugify";
 import minimist from "minimist";
 
 function getDate() {
-	const date = new Date();
-	const year = date.getFullYear();
-	const month = String(date.getMonth() + 1).padStart(2, "0"); // Month is 0-based
-	const day = String(date.getDate()).padStart(2, "0");
-	const hours = String(date.getHours()).padStart(2, "0");
-	const minutes = String(date.getMinutes()).padStart(2, "0");
-	const seconds = String(date.getSeconds()).padStart(2, "0");
+  const date = new Date();
+  const year = date.getFullYear();
+  const month = String(date.getMonth() + 1).padStart(2, "0"); // Month is 0-based
+  const day = String(date.getDate()).padStart(2, "0");
+  const hours = String(date.getHours()).padStart(2, "0");
+  const minutes = String(date.getMinutes()).padStart(2, "0");
+  const seconds = String(date.getSeconds()).padStart(2, "0");
 
-	return `${year}-${month}-${day} ${hours}:${minutes}:${seconds}`;
+  return `${year}-${month}-${day} ${hours}:${minutes}:${seconds}`;
 }
 
 function getPostSlug(postTitle) {
-	let slug = slugify(postTitle).toLocaleLowerCase();
-	if (slug === "") {
-		slug = "untitled";
-	}
-	return slug;
+  let slug = slugify(postTitle).toLocaleLowerCase();
+  if (slug === "") {
+    slug = "untitled";
+  }
+  return slug;
 }
 
 const HELP_INFO = `Usage: pnpm new [options] <post-title>
@@ -54,29 +54,29 @@ Example:
 const TARGET_DIR = "./src/content/";
 
 const args = minimist(process.argv.slice(2), {
-	string: ["lang"],
-	boolean: ["draft", "mdx", "help"],
-	default: {
-		lang: "en",
-		draft: false,
-		mdx: false,
-	},
-	alias: {
-		l: "lang",
-		d: "draft",
-		m: "mdx",
-		h: "help",
-	},
+  string: ["lang"],
+  boolean: ["draft", "mdx", "help"],
+  default: {
+    lang: "en",
+    draft: false,
+    mdx: false,
+  },
+  alias: {
+    l: "lang",
+    d: "draft",
+    m: "mdx",
+    h: "help",
+  },
 });
 
 if (args.help) {
-	console.log(HELP_INFO);
-	process.exit(0);
+  console.log(HELP_INFO);
+  process.exit(0);
 }
 
 let postTitle = args._.join(" "); // Join the rest of the arguments
 if (!postTitle || postTitle.trim() === "") {
-	postTitle = "Untitled";
+  postTitle = "Untitled";
 }
 console.log("Creating new post:", postTitle);
 
@@ -88,18 +88,17 @@ const fullPath = path.join(TARGET_DIR, fileTypeDir, fileLangDir, fileName);
 
 console.log("Full path:", fullPath);
 if (fs.existsSync(fullPath)) {
-	console.error(`ERROR: File ${fullPath} already exists`);
-	process.exit(1);
+  console.error(`ERROR: File ${fullPath} already exists`);
+  process.exit(1);
 }
 
 const content = `---
 title: ${postTitle}
 tags:
-  - tag1
-  - tag2
-  - tag3
+ - tag1
+ - tag2
+ - tag3
 date: ${getDate()}
-updated: ${getDate()}
 ---
 
 Write your description here.
