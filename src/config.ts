@@ -1,13 +1,13 @@
 export const SITE = {
   title: {
-    en: "BlockLune's Blog",
-    zh: "BlockLune's Blog",
+    en: "Unpolished Notes",
+    zh: "Unpolished Notes",
   },
   description: {
-    en: "A blog about development and life, powered by Astro.",
-    zh: "一个关于开发和生活的博客，由 Astro 驱动。",
+    en: "A living collection of unpolished notes, powered by Astro.",
+    zh: "A living collection of unpolished notes, powered by Astro.",
   },
-  url: "https://blocklune.cc",
+  url: "https://warish.co/",
   og: {
     imageUrl: "/ogimage.jpg",
   },
